@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050812">
+  <title>Electronics Solutions GLT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header class="encabezado">
+    <a href="#" class="logo">
+      <span class="logo-icon">GLT+</span>
+      <div>
+        <h2>ELECTRONICS</h2>
+        <small>SOLUTIONS GLT</small>
+      </div>
+    </a>
+
+    <div class="acciones-header">
+      <a class="boton-canal"
+         href="https://whatsapp.com/channel/0029Vb8RE8X4NVinYGH7Pl0R"
+         target="_blank" rel="noopener">
+        <span>◉</span> SEGUINOS
+      </a>
+
+      <button class="carrito" onclick="abrirCarrito()" aria-label="Abrir carrito">
+        🛒 <span id="contador">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PORTADA PRINCIPAL -->
+    <section class="portada-carrusel">
+
+      <div class="diapositiva activa">
+        <div class="portada-contenido">
+          <p class="subtitulo">TECNOLOGÍA • ACCESORIOS • SOLUCIONES</p>
+          <h1>La tecnología<br>que te <span>conecta.</span></h1>
+          <p class="descripcion">
+            Encontrá accesorios y productos electrónicos para tu día a día.
+          </p>
+          <a href="#productos" class="boton">EXPLORAR PRODUCTOS ↗</a>
+        </div>
+        <div class="portada-visual">
+          <div class="anillo anillo1"></div>
+          <div class="anillo anillo2"></div>
+          <div class="centro-logo">GLT</div>
+        </div>
+      </div>
+
+      <div class="diapositiva">
+        <div class="portada-contenido">
+          <p class="subtitulo">ACCESORIOS PARA TU DÍA A DÍA</p>
+          <h1>Conectate con<br>la <span>tecnología.</span></h1>
+          <p class="descripcion">
+            Cargadores, cables y accesorios para todos tus dispositivos.
+          </p>
+          <a href="#productos" class="boton">VER CATÁLOGO ↗</a>
+        </div>
+        <div class="portada-visual">
+          <div class="anillo anillo1"></div>
+          <div class="anillo anillo2"></div>
+          <div class="centro-logo">⚡</div>
+        </div>
+      </div>
+
+      <div class="diapositiva">
+        <div class="portada-contenido">
+          <p class="subtitulo">ELECTRONICS SOLUTIONS GLT</p>
+          <h1>Tu mundo.<br>Tu <span>tecnología.</span></h1>
+          <p class="descripcion">
+            Descubrí productos pensados para acompañarte todos los días.
+          </p>
+          <a href="#productos" class="boton">DESCUBRIR MÁS ↗</a>
+        </div>
+        <div class="portada-visual">
+          <div class="anillo anillo1"></div>
+          <div class="anillo anillo2"></div>
+          <div class="centro-logo">GLT+</div>
+        </div>
+      </div>
+
+      <button class="flecha anterior" onclick="cambiarDiapositiva(-1)" aria-label="Anterior">‹</button>
+      <button class="flecha siguiente" onclick="cambiarDiapositiva(1)" aria-label="Siguiente">›</button>
+
+      <div class="indicadores">
+        <button class="punto activo" onclick="irDiapositiva(0)" aria-label="Diapositiva 1"></button>
+        <button class="punto" onclick="irDiapositiva(1)" aria-label="Diapositiva 2"></button>
+        <button class="punto" onclick="irDiapositiva(2)" aria-label="Diapositiva 3"></button>
+      </div>
+    </section>
+
+    <!-- ACCESO A PROMOCIONES -->
+    <section class="franja-promo">
+      <div>
+        <span class="promo-etiqueta">NOVEDADES GLT</span>
+        <h2>¿Buscás algo en especial?</h2>
+        <p>Consultanos por productos, disponibilidad y promociones.</p>
+      </div>
+      <a class="boton" href="https://wa.me/5491178222513?text=Hola%2C%20quiero%20consultar%20por%20productos%20y%20promociones%20de%20GLT." target="_blank" rel="noopener">
+        CONSULTAR ↗
+      </a>
+    </section>
+
+    <!-- CATÁLOGO -->
+    <section class="catalogo" id="productos">
+      <p class="subtitulo">CATÁLOGO GLT</p>
+      <h2>Encontrá tu próximo <span>upgrade.</span></h2>
+      <p class="texto-catalogo">Productos destacados</p>
+
+      <div class="productos" id="carruselProductos">
+
+        <article class="producto">
+          <div class="foto">🔌</div>
+          <span class="etiqueta">DESTACADO</span>
+          <h3>Cargador Samsung + cable</h3>
+          <p class="precio">$6.600</p>
+          <button onclick="agregar('Cargador Samsung + cable',6600)">
+            AGREGAR AL CARRITO +
+          </button>
+        </article>
+
+        <article class="producto">
+          <div class="foto">🎧</div>
+          <span class="etiqueta">TECNOLOGÍA</span>
+          <h3>Auriculares Bluetooth</h3>
+          <p class="precio">$15.900</p>
+          <button onclick="agregar('Auriculares Bluetooth',15900)">
+            AGREGAR AL CARRITO +
+          </button>
+        </article>
+
+        <article class="producto">
+          <div class="foto">⚡</div>
+          <span class="etiqueta">ACCESORIOS</span>
+          <h3>Cargador USB-C</h3>
+          <p class="precio">$8.900</p>
+          <button onclick="agregar('Cargador USB-C',8900)">
+            AGREGAR AL CARRITO +
+          </button>
+        </article>
+
+        <article class="producto">
+          <div class="foto">📱</div>
+          <span class="etiqueta">PROTECCIÓN</span>
+          <h3>Vidrio templado</h3>
+          <p class="precio">$3.500</p>
+          <button onclick="agregar('Vidrio templado',3500)">
+            AGREGAR AL CARRITO +
+          </button>
+        </article>
+
+      </div>
+
+      <p class="ayuda-carrusel">Deslizá para ver más productos →</p>
+    </section>
+
+    <!-- CANAL DE WHATSAPP -->
+    <section class="seccion-canal">
+      <div class="canal-icono">◉</div>
+      <div class="canal-texto">
+        <p class="subtitulo">COMUNIDAD GLT</p>
+        <h2>Enterate de nuestras novedades.</h2>
+        <p>Seguinos en nuestro canal oficial de WhatsApp.</p>
+      </div>
+      <a class="boton-canal-grande"
+         href="https://whatsapp.com/channel/0029Vb8RE8X4NVinYGH7Pl0R"
+         target="_blank" rel="noopener">
+        SEGUIR CANAL ↗
+      </a>
+    </section>
+
+    <section class="contacto">
+      <p class="subtitulo">ELECTRONICS SOLUTIONS GLT</p>
+      <h2>La tecnología que necesitás, en un solo lugar.</h2>
+      <p>Estamos para ayudarte a encontrar lo que buscás.</p>
+      <a class="contacto-link" href="https://wa.me/5491178222513" target="_blank" rel="noopener">
+        CONTACTAR POR WHATSAPP
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    <strong>ELECTRONICS SOLUTIONS GLT</strong>
+    <p>© 2026 - Todos los derechos reservados</p>
+  </footer>
+
+  <!-- CARRITO LATERAL -->
+  <div id="fondoCarrito" class="fondo-carrito" onclick="cerrarCarrito()"></div>
+
+  <aside id="panelCarrito" class="panel-carrito">
+    <div class="carrito-titulo">
+      <h2>Mi carrito 🛒</h2>
+      <button class="cerrar" onclick="cerrarCarrito()" aria-label="Cerrar carrito">✕</button>
+    </div>
+
+    <div id="listaCarrito"></div>
+
+    <div class="resumen">
+      <h3 id="total">Total: $0</h3>
+      <button class="comprar" onclick="finalizarCompra()">
+        FINALIZAR PEDIDO POR WHATSAPP
+      </button>
+      <p class="nota-pedido">El pedido se enviará por WhatsApp para confirmar la compra.</p>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>

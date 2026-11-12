@@ -14,10 +14,43 @@
 </head>
 <body>
 
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<nav class="side-menu" id="sideMenu" aria-label="Menú principal">
+  <div class="menu-top">
+    <a href="#inicio" class="logo">
+      <span class="logo-icon">GLT</span>
+      <span>ELECTRONICS <small>SOLUTIONS</small></span>
+    </a>
+    <button class="close-menu" id="closeMenu" aria-label="Cerrar menú">✕</button>
+  </div>
+
+  <p class="menu-label">MENÚ PRINCIPAL</p>
+  <a href="#inicio" class="menu-link">⌂ <span>Inicio</span></a>
+  <a href="#catalogo" class="menu-link">▦ <span>Todos los productos</span></a>
+  <a href="#ofertas" class="menu-link">⚡ <span>Ofertas y novedades</span></a>
+
+  <p class="menu-label">CATEGORÍAS</p>
+  <a href="#catalogo" class="menu-link" data-menu-category="Accesorios">◈ <span>Accesorios</span></a>
+  <a href="#catalogo" class="menu-link" data-menu-category="Audio">♫ <span>Audio</span></a>
+  <a href="#catalogo" class="menu-link" data-menu-category="Cargadores">ϟ <span>Cargadores</span></a>
+  <a href="#catalogo" class="menu-link" data-menu-category="Protección">◇ <span>Protección</span></a>
+  <a href="#catalogo" class="menu-link" data-menu-category="Tecnología">▣ <span>Tecnología</span></a>
+  <a href="#catalogo" class="menu-link" data-menu-category="Gaming">⌁ <span>Gaming</span></a>
+  <a href="#catalogo" class="menu-link" data-menu-category="Hogar">⌂ <span>Hogar</span></a>
+
+  <p class="menu-label">MI TIENDA</p>
+  <a href="#favoritos" class="menu-link" id="menuFavorites">♡ <span>Favoritos</span></a>
+  <button class="menu-link menu-cart-link" id="menuCart">🛒 <span>Mi carrito</span></button>
+  <a href="https://whatsapp.com/channel/0029Vb8RE8X4NVinYGH7Pl0R" target="_blank" rel="noopener" class="menu-link">✆ <span>Canal de WhatsApp</span></a>
+</nav>
+
 <header class="header">
-  <a href="#" class="logo">
+  <button class="menu-button" id="openMenu" aria-label="Abrir menú">☰</button>
+
+  <a href="#inicio" class="logo">
     <span class="logo-icon">GLT</span>
-    <span> ELECTRONICS <small>SOLUTIONS</small></span>
+    <span>ELECTRONICS <small>SOLUTIONS</small></span>
   </a>
 
   <button class="cart-button" id="openCart">
@@ -27,7 +60,7 @@
 </header>
 
 <main>
-  <section class="hero">
+  <section class="hero" id="inicio">
     <div class="hero-content">
       <span class="eyebrow">TECNOLOGÍA A TU ALCANCE</span>
       <h1>EL FUTURO<br>ESTÁ EN TUS MANOS</h1>
@@ -46,7 +79,7 @@
     <div>💬 <span>Atención por WhatsApp</span></div>
   </section>
 
-  <section class="promo-section">
+  <section class="promo-section" id="ofertas">
     <div class="section-heading">
       <div>
         <span class="eyebrow">DESCUBRÍ GLT</span>
@@ -73,7 +106,7 @@
         <span>ELECTRONICS GLT</span>
         <h3>Tu próximo<br>producto está acá</h3>
         <p>Explorá nuestras categorías.</p>
-        <a href="#categorias">Descubrir →</a>
+        <a href="#catalogo">Descubrir →</a>
       </article>
     </div>
   </section>

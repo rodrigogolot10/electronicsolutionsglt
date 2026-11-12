@@ -127,7 +127,7 @@ button {
   font-weight: 800;
 }
 
-/* MENU LATERAL */
+/* MENU LATERAL CORREGIDO */
 
 .menu-overlay {
   position: fixed;
@@ -136,6 +136,7 @@ button {
   background: rgba(0, 0, 0, .75);
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: opacity .3s, visibility .3s;
   backdrop-filter: blur(3px);
 }
@@ -143,26 +144,34 @@ button {
 .menu-overlay.open {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .side-menu {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  width: min(330px, 88%);
+  width: min(330px, 88vw);
+  height: 100vh;
   padding: 22px 18px;
   overflow-y: auto;
   z-index: 40;
   background: linear-gradient(180deg, #101d35, #080e1c);
   border-right: 1px solid #1b4772;
   box-shadow: 15px 0 45px #0008;
-  transform: translateX(-105%);
-  transition: transform .3s ease;
+  transform: translateX(-110%);
+  visibility: hidden;
+  pointer-events: none;
+  transition: transform .3s ease, visibility .3s ease;
 }
 
 .side-menu.open {
   transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .menu-top {
@@ -198,6 +207,7 @@ button {
 }
 
 .menu-label {
+  display: block;
   color: var(--cyan);
   font-size: 10px;
   font-weight: 800;
@@ -206,10 +216,10 @@ button {
 }
 
 .menu-link {
-  width: 100%;
-  min-height: 45px;
   display: flex;
   align-items: center;
+  width: 100%;
+  min-height: 45px;
   gap: 14px;
   padding: 11px 13px;
   margin: 4px 0;
@@ -220,6 +230,7 @@ button {
   font-size: 13px;
   font-weight: 600;
   text-align: left;
+  text-decoration: none;
   transition: .2s;
 }
 

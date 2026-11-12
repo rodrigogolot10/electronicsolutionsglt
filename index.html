@@ -4,181 +4,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#050816">
-  <meta name="description" content="Electronics Solutions GLT: tecnología, accesorios y soluciones electrónicas.">
+  <meta name="theme-color" content="#080d1b">
+  <meta name="description" content="Electronics Solutions GLT - Tecnología, accesorios y soluciones electrónicas.">
   <title>Electronics Solutions GLT</title>
-  <link rel="stylesheet" href="./style.css">
-  <script src="./script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header class="header">
-  <a href="#" class="logo">GLT<span>+</span></a>
-  <div class="brand">ELECTRONICS <span>SOLUTIONS GLT</span></div>
-  <button class="cart-button" onclick="abrirCarrito()" aria-label="Abrir carrito">
-    🛒 <span id="contadorCarrito">0</span>
+  <a href="#" class="logo">
+    <span class="logo-icon">GLT</span>
+    <span> ELECTRONICS <small>SOLUTIONS</small></span>
+  </a>
+
+  <button class="cart-button" id="openCart">
+    <span>Mi carrito</span>
+    <span class="cart-count" id="cartCount">0</span>
   </button>
 </header>
 
 <main>
   <section class="hero">
-    <div class="slides" id="slides">
-
-      <article class="slide active">
-        <div class="hero-text">
-          <span class="eyebrow">ELECTRONICS SOLUTIONS GLT</span>
-          <h1>La tecnología<br><span>a otro nivel.</span></h1>
-          <p>Descubrí accesorios y soluciones para conectar tu mundo.</p>
-          <a href="#productos" class="primary-button">EXPLORAR PRODUCTOS</a>
-        </div>
-        <div class="hero-art">⚡</div>
-      </article>
-
-      <article class="slide">
-        <div class="hero-text">
-          <span class="eyebrow">CONECTÁ CON LO NUEVO</span>
-          <h1>Todo lo que<br><span>necesitás.</span></h1>
-          <p>Encontrá tecnología y accesorios para todos los días.</p>
-          <a href="#productos" class="primary-button">VER CATÁLOGO</a>
-        </div>
-        <div class="hero-art">🎧</div>
-      </article>
-
-      <article class="slide">
-        <div class="hero-text">
-          <span class="eyebrow">TU TIENDA DE CONFIANZA</span>
-          <h1>Elegí mejor.<br><span>Conectá más.</span></h1>
-          <p>Conocé nuestros productos y hacé tu pedido online.</p>
-          <a href="#productos" class="primary-button">COMPRAR</a>
-        </div>
-        <div class="hero-art">🚀</div>
-      </article>
-
+    <div class="hero-content">
+      <span class="eyebrow">TECNOLOGÍA A TU ALCANCE</span>
+      <h1>EL FUTURO<br>ESTÁ EN TUS MANOS</h1>
+      <p>Descubrí accesorios, tecnología y soluciones electrónicas en un solo lugar.</p>
+      <a href="#catalogo" class="main-button">EXPLORAR PRODUCTOS</a>
     </div>
-
-    <button class="slide-arrow prev" onclick="cambiarSlide(-1)" aria-label="Anterior">‹</button>
-    <button class="slide-arrow next" onclick="cambiarSlide(1)" aria-label="Siguiente">›</button>
-
-    <div class="dots">
-      <button class="dot active" onclick="irSlide(0)" aria-label="Diapositiva 1"></button>
-      <button class="dot" onclick="irSlide(1)" aria-label="Diapositiva 2"></button>
-      <button class="dot" onclick="irSlide(2)" aria-label="Diapositiva 3"></button>
+    <div class="hero-decoration">
+      <div class="energy-circle"></div>
+      <span>GLT</span>
     </div>
   </section>
 
-  <div class="ticker">
-    <span>⚡ TECNOLOGÍA</span>
-    <span>✦ ACCESORIOS</span>
-    <span>◈ SOLUCIONES GLT</span>
-    <span>⚡ TECNOLOGÍA</span>
-  </div>
+  <section class="benefits">
+    <div>⚡ <span>Productos seleccionados</span></div>
+    <div>🛒 <span>Compra fácil y rápida</span></div>
+    <div>💬 <span>Atención por WhatsApp</span></div>
+  </section>
 
-  <section class="products-section" id="productos">
+  <section class="promo-section">
     <div class="section-heading">
-      <span class="eyebrow">NUESTRO CATÁLOGO</span>
-      <h2>Productos <span>destacados</span></h2>
-      <p>Elegí tus favoritos y agregalos al carrito.</p>
+      <div>
+        <span class="eyebrow">DESCUBRÍ GLT</span>
+        <h2>Promociones y novedades</h2>
+      </div>
     </div>
 
-    <div class="products-track" id="carruselProductos">
-
-      <article class="product-card">
-        <div class="product-image">🔌</div>
-        <div class="product-info">
-          <span class="category">CARGADORES</span>
-          <h3>Cargador Samsung + cable</h3>
-          <p class="price">$6.600</p>
-          <button onclick="agregar(1)">AGREGAR AL CARRITO</button>
-        </div>
+    <div class="promo-track">
+      <article class="promo-card promo-one">
+        <span>TECNOLOGÍA</span>
+        <h3>Todo lo que<br>necesitás</h3>
+        <p>Descubrí nuestros productos.</p>
+        <a href="#catalogo">Ver catálogo →</a>
       </article>
 
-      <article class="product-card">
-        <div class="product-image">🎧</div>
-        <div class="product-info">
-          <span class="category">AUDIO</span>
-          <h3>Auriculares Bluetooth</h3>
-          <p class="price">$15.900</p>
-          <button onclick="agregar(2)">AGREGAR AL CARRITO</button>
-        </div>
+      <article class="promo-card promo-two">
+        <span>ACCESORIOS</span>
+        <h3>Mejorá tu<br>experiencia</h3>
+        <p>Accesorios para todos los días.</p>
+        <a href="#catalogo">Comprar →</a>
       </article>
 
-      <article class="product-card">
-        <div class="product-image">⚡</div>
-        <div class="product-info">
-          <span class="category">CARGADORES</span>
-          <h3>Cargador USB-C</h3>
-          <p class="price">$8.900</p>
-          <button onclick="agregar(3)">AGREGAR AL CARRITO</button>
-        </div>
+      <article class="promo-card promo-three">
+        <span>ELECTRONICS GLT</span>
+        <h3>Tu próximo<br>producto está acá</h3>
+        <p>Explorá nuestras categorías.</p>
+        <a href="#categorias">Descubrir →</a>
       </article>
-
-      <article class="product-card">
-        <div class="product-image">📱</div>
-        <div class="product-info">
-          <span class="category">PROTECCIÓN</span>
-          <h3>Vidrio templado</h3>
-          <p class="price">$3.500</p>
-          <button onclick="agregar(4)">AGREGAR AL CARRITO</button>
-        </div>
-      </article>
-
     </div>
-    <p class="swipe-help">Deslizá para ver más productos →</p>
+  </section>
+
+  <section class="catalog-section" id="catalogo">
+    <div class="section-heading">
+      <div>
+        <span class="eyebrow">NUESTRO CATÁLOGO</span>
+        <h2>Encontrá lo que buscás</h2>
+      </div>
+    </div>
+
+    <div class="search-box">
+      <span>⌕</span>
+      <input type="search" id="searchInput" placeholder="Buscar cargadores, auriculares, accesorios...">
+    </div>
+
+    <div class="categories" id="categorias">
+      <button class="category active" data-category="Todos">Todos</button>
+      <button class="category" data-category="Cargadores">Cargadores</button>
+      <button class="category" data-category="Audio">Audio</button>
+      <button class="category" data-category="Protección">Protección</button>
+      <button class="category" data-category="Tecnología">Tecnología</button>
+      <button class="category" data-category="Gaming">Gaming</button>
+      <button class="category" data-category="Hogar">Hogar</button>
+    </div>
+
+    <div class="product-grid" id="productGrid"></div>
+    <p class="empty-message" id="emptyMessage" hidden>No encontramos productos con esa búsqueda.</p>
+  </section>
+
+  <section class="contact-section">
+    <div>
+      <span class="eyebrow">¿TENÉS ALGUNA CONSULTA?</span>
+      <h2>Estamos para ayudarte</h2>
+      <p>Consultanos por productos, disponibilidad, pedidos y atención personalizada.</p>
+    </div>
+    <a class="main-button" href="https://wa.me/5491178222513" target="_blank" rel="noopener">CONTACTAR POR WHATSAPP</a>
   </section>
 
   <section class="channel-section">
     <div class="channel-icon">✦</div>
     <div>
-      <span class="eyebrow">COMUNIDAD GLT</span>
-      <h2>Enterate de las novedades</h2>
-      <p>Seguinos en nuestro canal oficial de WhatsApp.</p>
-      <a class="primary-button"
-         href="https://whatsapp.com/channel/0029Vb8RE8X4NVinYGH7Pl0R"
-         target="_blank" rel="noopener">
-        SEGUIR EL CANAL
-      </a>
+      <h2>Seguinos en nuestro canal</h2>
+      <p>Enterate de novedades, productos y promociones.</p>
     </div>
-  </section>
-
-  <section class="contact-section">
-    <span class="eyebrow">¿TENÉS UNA CONSULTA?</span>
-    <h2>Hablemos por <span>WhatsApp</span></h2>
-    <p>Consultanos por productos, disponibilidad y pedidos.</p>
-    <a class="whatsapp-button"
-       href="https://wa.me/5491178222513"
-       target="_blank" rel="noopener">
-      CONTACTAR AHORA
-    </a>
+    <a href="https://whatsapp.com/channel/0029Vb8RE8X4NVinYGH7Pl0R" target="_blank" rel="noopener">UNIRME AL CANAL →</a>
   </section>
 </main>
 
-<footer>
-  <a href="#" class="logo">GLT<span>+</span></a>
-  <p>ELECTRONICS SOLUTIONS GLT</p>
-  <small>© 2026 Electronics Solutions GLT. Todos los derechos reservados.</small>
+<footer class="footer">
+  <div class="logo">
+    <span class="logo-icon">GLT</span>
+    <span>ELECTRONICS <small>SOLUTIONS</small></span>
+  </div>
+  <p>© 2026 Electronics Solutions GLT. Todos los derechos reservados.</p>
+  <p class="footer-note">Tecnología y soluciones para vos.</p>
 </footer>
 
-<div class="cart-overlay" id="fondoCarrito" onclick="cerrarCarrito()"></div>
+<div class="cart-overlay" id="cartOverlay"></div>
 
-<aside class="cart-panel" id="panelCarrito" aria-label="Carrito de compras">
+<aside class="cart-panel" id="cartPanel">
   <div class="cart-header">
     <h2>Mi carrito</h2>
-    <button onclick="cerrarCarrito()" aria-label="Cerrar carrito">✕</button>
+    <button id="closeCart" class="close-button">✕</button>
   </div>
 
-  <div class="cart-items" id="listaCarrito">
-    <p class="empty-cart">Todavía no agregaste productos.</p>
-  </div>
+  <div id="cartItems" class="cart-items"></div>
 
   <div class="cart-footer">
-    <div class="total-row">
+    <div class="cart-total">
       <span>Total</span>
-      <strong id="totalCarrito">$0</strong>
+      <strong id="cartTotal">$0</strong>
     </div>
-    <button class="checkout-button" onclick="finalizarCompra()">FINALIZAR COMPRA</button>
-    <button class="continue-button" onclick="cerrarCarrito()">SEGUIR COMPRANDO</button>
+    <button id="checkoutButton" class="checkout-button">FINALIZAR POR WHATSAPP</button>
+    <button id="clearCart" class="clear-button">Vaciar carrito</button>
   </div>
 </aside>
 
+<script src="script.js"></script>
 </body>
 </html>

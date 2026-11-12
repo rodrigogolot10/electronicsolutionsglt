@@ -67,6 +67,76 @@ const emptyMessage = document.getElementById("emptyMessage");
 const cartPanel = document.getElementById("cartPanel");
 const cartOverlay = document.getElementById("cartOverlay");
 
+// MENÚ LATERAL
+const openMenuButton = document.getElementById("openMenu");
+const closeMenuButton = document.getElementById("closeMenu");
+const sideMenu = document.getElementById("sideMenu");
+const menuOverlay = document.getElementById("menuOverlay");
+const menuCartButton = document.getElementById("menuCart");
+
+function openMenu() {
+  if (!sideMenu || !menuOverlay) return;
+
+  sideMenu.classList.add("open");
+  menuOverlay.classList.add("open");
+  document.body.classList.add("menu-open");
+}
+
+function closeMenu() {
+  if (!sideMenu || !menuOverlay) return;
+
+  sideMenu.classList.remove("open");
+  menuOverlay.classList.remove("open");
+  document.body.classList.remove("menu-open");
+}
+
+if (openMenuButton) {
+  openMenuButton.addEventListener("click", openMenu);
+}
+
+if (closeMenuButton) {
+  closeMenuButton.addEventListener("click", closeMenu);
+}
+
+if (menuOverlay) {
+  menuOverlay.addEventListener("click", closeMenu);
+}
+
+// Cerrar el menú al elegir una opción
+if (sideMenu) {
+  sideMenu.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+}
+
+// CATEGORÍAS DESDE EL MENÚ
+document.querySelectorAll("[data-menu-category]").forEach(link => {
+  link.addEventListener("click", () => {
+    const category = link.dataset.menuCategory;
+
+    const categoryButton = document.querySelector(
+      `.category[data-category="${category}"]`
+    );
+
+    if (categoryButton) {
+      categoryButton.click();
+    } else {
+      activeCategory = category;
+      renderProducts();
+    }
+
+    closeMenu();
+  });
+});
+
+// ABRIR CARRITO DESDE EL MENÚ
+if (menuCartButton) {
+  menuCartButton.addEventListener("click", () => {
+    closeMenu();
+    openCart();
+  });
+}
+
 function formatPrice(price) {
   return "$" + Number(price).toLocaleString("es-AR");
 }

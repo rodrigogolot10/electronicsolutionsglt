@@ -102,7 +102,7 @@ if (menuOverlay) {
   menuOverlay.addEventListener("click", closeMenu);
 }
 
-// Cerrar el menú al elegir una opción
+// CERRAR MENÚ AL ELEGIR UNA OPCIÓN
 if (sideMenu) {
   sideMenu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", closeMenu);
